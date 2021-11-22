@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841CC535274C2CC9000DB414 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC534274C2CC9000DB414 /* ContentModel.swift */; };
 		84309E40274990B900F6AB1B /* Citymapper_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309E3F274990B900F6AB1B /* Citymapper_appApp.swift */; };
 		84309E42274990B900F6AB1B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309E41274990B900F6AB1B /* LaunchView.swift */; };
 		84309E44274990BB00F6AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84309E43274990BB00F6AB1B /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841CC534274C2CC9000DB414 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		841CC538274C3124000DB414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84309E3C274990B900F6AB1B /* Citymapper app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Citymapper app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84309E3F274990B900F6AB1B /* Citymapper_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citymapper_appApp.swift; sourceTree = "<group>"; };
 		84309E41274990B900F6AB1B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -51,11 +54,12 @@
 		84309E3E274990B900F6AB1B /* Citymapper app */ = {
 			isa = PBXGroup;
 			children = (
+				84309E3F274990B900F6AB1B /* Citymapper_appApp.swift */,
 				84309E4F2749910A00F6AB1B /* ViewModel */,
 				84309E4E2749910300F6AB1B /* Views */,
 				84309E4D274990FC00F6AB1B /* Models */,
-				84309E3F274990B900F6AB1B /* Citymapper_appApp.swift */,
 				84309E43274990BB00F6AB1B /* Assets.xcassets */,
+				841CC538274C3124000DB414 /* Info.plist */,
 				84309E45274990BB00F6AB1B /* Preview Content */,
 			);
 			path = "Citymapper app";
@@ -87,6 +91,7 @@
 		84309E4F2749910A00F6AB1B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				841CC534274C2CC9000DB414 /* ContentModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			files = (
 				84309E42274990B900F6AB1B /* LaunchView.swift in Sources */,
 				84309E40274990B900F6AB1B /* Citymapper_appApp.swift in Sources */,
+				841CC535274C2CC9000DB414 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +301,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Citymapper app/Preview Content\"";
 				DEVELOPMENT_TEAM = 46DS54RFKV;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Citymapper app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,7 +331,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Citymapper app/Preview Content\"";
 				DEVELOPMENT_TEAM = 46DS54RFKV;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Citymapper app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

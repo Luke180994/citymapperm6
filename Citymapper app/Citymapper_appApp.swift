@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct Citymapper_appApp: App {
+struct CitymapperApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchView()
+                .environmentObject(ContentModel())
         }
     }
 }
