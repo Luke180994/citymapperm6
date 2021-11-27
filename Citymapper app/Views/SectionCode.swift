@@ -18,11 +18,10 @@ struct SectionCode: View {
         
         
         Section(header: SectionHeaders(title: title)){
-            ForEach(model.resturaunts) {
+            ForEach(businesses) {
                 business in
                 
-                Text(business.name ?? "")
-                Divider()
+                BusinessRowView(business: business)
             }
         }
     }

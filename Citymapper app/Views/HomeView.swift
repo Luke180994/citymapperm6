@@ -30,10 +30,10 @@ struct HomeView: View {
                         Spacer()
                         Text("Switch to map view")
                         
-                    }.padding()
+                    }
                     Divider()
-                }
-                BusinessList()
+                    BusinessList()
+                }.padding([.horizontal, .top])
             }
             else{
                 //shop map
