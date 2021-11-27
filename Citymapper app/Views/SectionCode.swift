@@ -21,7 +21,11 @@ struct SectionCode: View {
             ForEach(businesses) {
                 business in
                 
+                NavigationLink(destination: BusinessDetailView(business: business)){
+                
                 BusinessRowView(business: business)
+                    
+                }
             }
         }
     }
