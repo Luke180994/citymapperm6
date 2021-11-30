@@ -82,6 +82,7 @@ struct BusinessDetailView: View {
                 Divider()
                 
                 //Website
+                HStack(){
                 Text("Website:")
                     .bold()
                 Text(business.url ?? "")
@@ -89,6 +90,7 @@ struct BusinessDetailView: View {
                 Spacer()
                 Link("Visit", destination: URL(string: "tel:\(business.url ?? "")")!)
                     .padding(.trailing)
+                }
             }
   
             
