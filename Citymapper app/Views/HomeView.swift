@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject var model: ContentModel
     @State var isMapShowing = false
-    
+    @State var selectedBusiness: Business?
     
     var body: some View {
         
@@ -37,23 +37,51 @@ struct HomeView: View {
                         }
                         Divider()
                         BusinessList()
+                        
                     }
                     .padding([.horizontal, .top])
                     .navigationBarHidden(true)
                 }
                 else{
-                    //shop map
-                    BusinessMap()
-                        .ignoresSafeArea()
+                    
+                    ZStack(alignment: .top){
+                        
+                        //shop map
+                        BusinessMap(selectedBusiness: $selectedBusiness)
+                            .ignoresSafeArea()
+                            .sheet(item: $selectedBusiness) { business in
+                                //create a business detail view instance
+                                //pass in selected busniess
+                                BusinessDetailView(business: business)
+                            }
+                        
+                        ZStack(){
+                            
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .cornerRadius(5)
+                                .frame(height: 48)
+                            
+                            HStack(){
+                                
+                                Image(systemName: "location")
+                                Text("San Fransisco")
+                                Spacer()
+                                Button("Switch to list view"){
+                                    self.isMapShowing = false
+                                }
+                                
+                            }.padding()
+                            
+                        }.padding()
+                        
+                    }.navigationBarHidden(true)
                 }
             }
-        }
-        else {
-            ProgressView()
+            
         }
     }
 }
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
