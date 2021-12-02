@@ -10,7 +10,10 @@ import SwiftUI
 struct BusinessDetailView: View {
     var business: Business
     
+    @State var showDirections = false
+    
     var body: some View {
+    
        
         VStack(alignment: .leading){
             
@@ -39,20 +42,16 @@ struct BusinessDetailView: View {
             }
             Group(){
                 
-                //name
-                Text(business.name!)
-                    .font(.largeTitle)
-                //adress
-                if business.location?.displayAddress != nil {
-                    ForEach(business.location!.displayAddress!, id: \.self) { displayLine in
-                        Text(displayLine)
-                    }
+                HStack(){
+                BusinessTitle(business: business)
+                    .padding()
+                    
+                    Spacer()
+                    
+                    Yelpattribution(link: business.url!)
                 }
-                
-                //rating
-                Image("regular \(business.rating ?? 0)")
-                
-                Divider()
+                DashDivider()
+                    .padding(.horizontal)
                 
                 //phone
                 HStack(){
@@ -62,9 +61,10 @@ struct BusinessDetailView: View {
                     Spacer()
                     Link("Call", destination: URL(string: "tel:\(business.phone ?? "")")!)
                         .padding(.trailing)
-                }
+                }.padding()
                 
-                Divider()
+                DashDivider()
+                    .padding(.horizontal)
                 
                 //reviews
                 HStack(){
@@ -76,10 +76,11 @@ struct BusinessDetailView: View {
                     Link("Read", destination: URL(string: "tel:\(business.url ?? "")")!)
                         .padding(.trailing)
                     
-                }
+                }.padding()
                 
                 
-                Divider()
+                DashDivider()
+                    .padding(.horizontal)
                 
                 //Website
                 HStack(){
@@ -90,7 +91,7 @@ struct BusinessDetailView: View {
                 Spacer()
                 Link("Visit", destination: URL(string: "tel:\(business.url ?? "")")!)
                     .padding(.trailing)
-                }
+                }.padding()
             }
   
             
@@ -98,7 +99,7 @@ struct BusinessDetailView: View {
         
         //get directions button
         Button {
-           //todo: show direcrtions
+           showDirections = true
         }label: {
             
             ZStack(){
@@ -114,7 +115,11 @@ struct BusinessDetailView: View {
                 
             }
             
-        }
+        }.padding()
+            .sheet(isPresented: $showDirections) {
+                DirectionsView(business: business)
+            }
+        
     }
 }
 

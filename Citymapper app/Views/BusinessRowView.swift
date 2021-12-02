@@ -46,7 +46,7 @@ struct BusinessRowView: View {
                 }
                 
             }
-            
+            DashDivider()
         }
         .foregroundColor(.black)
         
